@@ -1,5 +1,7 @@
 package com.study.framework.common.response;
 
+import com.study.framework.common.exception.BaseExceptionInterface;
+import com.study.framework.common.exception.BizException;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -14,7 +16,7 @@ import java.io.Serializable;
 @Data
 public class Response <T> implements Serializable {
     // 是否成功，默认为 true
-    private boolean success;
+    private boolean success = true;
     // 响应消息
     private String message;
     // 异常码
@@ -52,6 +54,20 @@ public class Response <T> implements Serializable {
         response.setSuccess(false);
         response.setErrorCode(errorCode);
         response.setMessage(errorMessage);
+        return response;
+    }
+    public static <T> Response<T> fail(BizException e) {
+        Response<T> response = new Response<>();
+        response.setSuccess(false);
+        response.setErrorCode(e.getErrorCode());
+        response.setMessage(e.getErrorMessage());
+        return response;
+    }
+    public static <T> Response<T> fail(BaseExceptionInterface e) {
+        Response<T> response = new Response<>();
+        response.setSuccess(false);
+        response.setErrorCode(e.getErrorCode());
+        response.setMessage(e.getErrorMessage());
         return response;
     }
 

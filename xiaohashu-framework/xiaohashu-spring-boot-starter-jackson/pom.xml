@@ -2,19 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>16</source>
-                    <target>16</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <!-- 指定父项目 -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>16</source>
+          <target>16</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- 指定父项目 -->
   <parent>
     <groupId>com.study</groupId>
     <artifactId>xiaohashu-framework</artifactId>
@@ -22,9 +22,10 @@
   </parent>
   <!-- 指定打包方式 -->
   <packaging>jar</packaging>
-  <artifactId>xiaohashu-spring-boot-starter-biz-operationlog</artifactId>
+  <artifactId>xiaohashu-spring-boot-starter-jackson</artifactId>
+
   <name>${project.artifactId}</name>
-  <description>接口日志组件</description>
+  <description>自定义的 Jackson </description>
 
   <dependencies>
     <dependency>
@@ -33,7 +34,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-aop</artifactId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
     </dependency>
   </dependencies>
 

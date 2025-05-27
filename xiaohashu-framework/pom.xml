@@ -29,5 +29,6 @@
   <modules>
     <module>xiaohashu-common</module>
     <module>xiaohashu-spring-boot-starter-biz-operationlog</module>
+    <module>xiaohashu-spring-boot-starter-jackson</module>
   </modules>
 </project>
