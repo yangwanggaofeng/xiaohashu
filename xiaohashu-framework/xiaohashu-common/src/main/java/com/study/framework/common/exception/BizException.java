@@ -12,7 +12,7 @@ import lombok.Setter;
  **/
 @Setter
 @Getter
-public class BizException implements BaseExceptionInterface{
+public class BizException extends RuntimeException{
     // 异常码
     private String errorCode;
     // 错误信息
@@ -21,14 +21,5 @@ public class BizException implements BaseExceptionInterface{
     public BizException(BaseExceptionInterface baseExceptionInterface){
         this.errorCode = baseExceptionInterface.getErrorCode();
         this.errorMessage = baseExceptionInterface.getErrorMessage();
-    }
-    @Override
-    public String getErrorCode() {
-        return null;
-    }
-
-    @Override
-    public String getErrorMessage() {
-        return null;
     }
 }
