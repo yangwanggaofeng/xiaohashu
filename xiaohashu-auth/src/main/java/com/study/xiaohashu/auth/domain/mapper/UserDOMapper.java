@@ -1,23 +1,28 @@
 package com.study.xiaohashu.auth.domain.mapper;
 
 import com.study.xiaohashu.auth.domain.dataobject.UserDO;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * @ClassName UserMapper
- * @Description TODO
- * @Author zhang
- * @Date 2024/12/18
- * @Version 1.0
- **/
 public interface UserDOMapper {
-    /**
-     * 根据主键Id查询
-     */
+    int deleteByPrimaryKey(Long id);
+
+    int insert(UserDO record);
+
+    int insertSelective(UserDO record);
+
     UserDO selectByPrimaryKey(Long id);
+
     /**
-     * 插入记录
-     * @param record
+     * 根据手机号查询记录
+     * @param schema 当前schema
+     * @param phone 手机号
      * @return
      */
-    int insert(UserDO record);
+    UserDO selectByPhone(@Param("schema") String schema ,
+                         @Param("phone") String phone);
+
+    int updateByPrimaryKeySelective(UserDO record);
+
+    int updateByPrimaryKey(UserDO record);
+
 }

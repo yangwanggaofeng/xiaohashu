@@ -17,7 +17,7 @@ class XiaohashuAuthApplicationTests {
     private UserDOMapper userDOMapper;
     @Test
     void testInsert() {
-        UserDO userDO = UserDO.builder().username("小哈书")
+        UserDO userDO = UserDO.builder().nickname("小哈书")
                 .createTime(LocalDateTime.now())
                 .updateTime(LocalDateTime.now())
                 .build();
